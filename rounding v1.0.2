@@ -163,7 +163,7 @@
         blockType: Scratch.BlockType.BOOLEAN,
         text: `Does [NUMB] round to [ANS] when rounding to the nearest [RNUMB]`,
         arguments: {
-            "NUMBER": {
+            "NUMB": {
                 type: Scratch.ArgumentType.NUMBER,
                 defaultValue: 16,
             },
@@ -179,11 +179,11 @@
         disableMonitor: true
     });
     Extension.prototype[`dnrtawrttnr`] = async (args, util) => {
-        if (Boolean(((args["RNUMB"] * Math.round((args["NUMBER"] / args["RNUMB"]))) == args["ANS"]))) {
-            return args["true"]
+        if (Boolean(((args["RNUMB"] * Math.round((args["NUMB"] / args["RNUMB"]))) == args["ANS"]))) {
+            return 'true'
 
         } else {
-            return args["false"]
+            return 'false'
 
         };
     };
