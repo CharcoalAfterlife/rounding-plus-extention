@@ -1,7 +1,4 @@
-/*
-   This extension was made with TurboBuilder!
-   https://turbobuilder-steel.vercel.app/
-*/
+
 (async function(Scratch) {
     const variables = {};
     const blocks = [];
@@ -122,7 +119,7 @@
                     return await playWithAudioElement(url, target);
                 }
             } catch (e) {
-                console.warn(`All attempts to play ${url} failed`, e);
+                console.warn(`All attempts to play ${url} cannot`, e);
             }
         };
 
@@ -167,7 +164,7 @@
         blockType: Scratch.BlockType.BOOLEAN,
         text: `Does [NUMB] round to [ANS] when rounding to the nearest [RNUMB]`,
         arguments: {
-            "NUMBER": {
+            "NUMB": {
                 type: Scratch.ArgumentType.NUMBER,
                 defaultValue: 16,
             },
@@ -183,7 +180,7 @@
         disableMonitor: true
     });
     Extension.prototype[`dnrtawrttnr`] = async (args, util) => {
-        if (Boolean(((args["RNUMB"] * Math.round((args["NUMBER"] / args["RNUMBER"]))) == args["ANS"]))) {
+        if (Boolean(((args["RNUMB"] * Math.round((args["NUMB"] / args["RNUMB"]))) == args["ANS"]))) {
             return args["true"]
 
         } else {
